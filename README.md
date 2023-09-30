@@ -37,12 +37,11 @@ Full-stack developer with a passion for crafting innovative digital solutions. I
 
 
 ## Rapidfire  
-<table><tr><td valign="top" width="50%">
 
 - 🔭 I’m currently working on [Freelancer.com](https://www.freelancer.com)  
   
 
--   
+  
   
 
 - ❓ Ask me about anything related to Programing languages and related technologies  
@@ -50,18 +49,13 @@ Full-stack developer with a passion for crafting innovative digital solutions. I
 
 - ⚡ Fun fact: "Code enthusiast with a knack for turning coffee into code. ☕💻"  
 
-
-</td><td valign="top" width="50%">
-
-
-
-</td></tr></table>  
+ 
 
 <br/>  
 
 
 ## Languages and Tools  
-<div align="center">  
+<div align="left">  
 <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="25" /></a>  
 <a href="https://www.w3schools.com/css/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="25" /></a>  
 <a href="https://www.javascript.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="25" /></a>  
@@ -91,25 +85,23 @@ Full-stack developer with a passion for crafting innovative digital solutions. I
 <br/>  
 
 
-## Github Stats  
-<table><tr><td valign="top" width="50%">
 
+<!--
+## Github Stats  
 <img src="https://github-readme-stats.vercel.app/api?username=ushanrashmika23&show_icons=true&count_private=true&hide_border=true" align="left" style="width: 100%" />
 
-</td><td valign="top" width="50%">
 
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ushanrashmika23&hide_border=true&layout=compact" align="left" style="width: 100%" />
-
-</td></tr></table>  
-
-<br/>  
-
-  
+ 
 
 <br/>  
 
   
 
+<br/>  
+
+  
+-->
 <br/>  
 
 <div align="center">
@@ -120,6 +112,3 @@ Full-stack developer with a passion for crafting innovative digital solutions. I
                 />
             </a></div>
 <br />
-
-----
-<div align="center">Generated using <a href="https://profilinator.rishav.dev/" target="_blank">Github Profilinator</a></div>

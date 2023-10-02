@@ -38,7 +38,7 @@ Full-stack developer with a passion for crafting innovative digital solutions. I
 
 ## Rapidfire  
 
-- 🔭 I’m currently working on [Freelancer.com](https://www.freelancer.com)  
+- 🔭 I’m currently working on [Freelancer.com](https://www.freelancer.com) [Upwork.com](https://www.upwork.com)  [Fiverr.com](https://www.fiverr.com)
   
 
   

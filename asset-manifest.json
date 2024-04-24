@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/ushanrashmika23/static/css/main.42094780.css",
+    "main.js": "/ushanrashmika23/static/js/main.3cd15fa6.js",
+    "static/js/453.140c6f48.chunk.js": "/ushanrashmika23/static/js/453.140c6f48.chunk.js",
+    "static/media/profile-pic.png": "/ushanrashmika23/static/media/profile-pic.8b52acef9e9691d67737.png",
+    "static/media/about-pic.png": "/ushanrashmika23/static/media/about-pic.1bfdbfdd70c33eacc005.png",
+    "static/media/email.png": "/ushanrashmika23/static/media/email.761df3bc69bdc631bd2f.png",
+    "static/media/instagram.png": "/ushanrashmika23/static/media/instagram.ba61479053b2692bdafe.png",
+    "static/media/linkedin.png": "/ushanrashmika23/static/media/linkedin.032cf8a63be2f0f4d425.png",
+    "static/media/slick.svg": "/ushanrashmika23/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/ushanrashmika23/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/ushanrashmika23/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/ushanrashmika23/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/ushanrashmika23/index.html",
+    "main.42094780.css.map": "/ushanrashmika23/static/css/main.42094780.css.map",
+    "main.3cd15fa6.js.map": "/ushanrashmika23/static/js/main.3cd15fa6.js.map",
+    "453.140c6f48.chunk.js.map": "/ushanrashmika23/static/js/453.140c6f48.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.42094780.css",
+    "static/js/main.3cd15fa6.js"
+  ]
+}

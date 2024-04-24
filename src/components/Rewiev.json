@@ -1,0 +1,38 @@
+[
+    {
+        "name": "John Doe",
+        "email": "john@example.com",
+        "msg": "Great product, highly recommended!",
+        "rate": 5
+    },
+    {
+        "name": "Alice Smith",
+        "email": "alice@example.com",
+        "msg": "Awesome service, very satisfied!",
+        "rate": 4
+    },
+    {
+        "name": "Bob Johnson",
+        "email": "bob@example.com",
+        "msg": "Good experience overall.",
+        "rate": 3
+    },
+    {
+        "name": "Emily Brown",
+        "email": "emily@example.com",
+        "msg": "Could be better, but still decent.",
+        "rate": 3
+    },
+    {
+        "name": "Michael Davis",
+        "email": "michael@example.com",
+        "msg": "Not impressed, needs improvement.",
+        "rate": 2
+    },
+    {
+        "name": "Sarah Wilson",
+        "email": "sarah@example.com",
+        "msg": "Terrible experience, would not recommend.",
+        "rate": 1
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Python",
+        "icon":7,
+        "rate": 3
+    },
+    {
+        "name": "Java",
+        "icon":8,
+        "rate": 2
+    },
+    {
+        "name": "NodeJS",
+        "icon":9,
+        "rate": 2
+    },
+    {
+        "name": "SQL",
+        "icon":10,
+        "rate": 3
+    },
+    {
+        "name": "MongoDB",
+        "icon":11,
+        "rate": 2
+    },
+    {
+        "name": "Express",
+        "icon":12,
+        "rate": 1
+    }
+    ,
+    {
+        "name": "Springboot",
+        "icon":13,
+        "rate": 1
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "name": "HTML",
+        "icon":1,
+        "rate": 3
+    },
+    {
+        "name": "CSS",
+        "icon":2,
+        "rate": 3
+    },
+    {
+        "name": "JavaScript",
+        "icon":3,
+        "rate": 2
+    },
+    {
+        "name": "React",
+        "icon":4,
+        "rate": 2
+    },
+    {
+        "name": "Bootstrap",
+        "icon":5,
+        "rate": 2
+    },
+    {
+        "name": "Angular",
+        "icon":6,
+        "rate": 1
+    }
+]

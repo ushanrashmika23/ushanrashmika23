@@ -1,8 +1,6 @@
 <h1 align="center">Hi 👋, I'm Ushan Rashmika</h1>
 <h3 align="center">A passionate Full-Stack Developer from Sri Lanka</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=ushanrashmika23&label=Profile%20views&color=0e75b6&style=flat" alt="ushanrashmika23" /> </p>
-
 - 👨‍💻 All of my projects are available at [https://ushanrashmika23.github.io/ushanrashmika23](https://ushanrashmika23.github.io/ushanrashmika23)
 
 - 💬 Ask me about **MERN Stack**
@@ -26,9 +24,3 @@
 
 <h3 align="left">Support:</h3>
 <p><a href="https://www.buymeacoffee.com/ushanrashmika23"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="ushanrashmika23" /></a></p><br><br>
-
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=ushanrashmika23&show_icons=true&locale=en&layout=compact" alt="ushanrashmika23" /></p>
-
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=ushanrashmika23&show_icons=true&locale=en" alt="ushanrashmika23" /></p>
-
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=ushanrashmika23&" alt="ushanrashmika23" /></p>

@@ -38,7 +38,7 @@ const Hero: React.FC<HeroProps> = ({
   };
   return <section id="home" className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-2">
       <div className="container mx-auto max-w-4xl text-center">
-        <div className='p-1 bg-white/30 w-fit h-fit mx-auto rounded-full mb-5'><img src={Me} alt="Hero Background" className="w-44 mx-auto" /></div>
+        <div className='p-1 bg-white/30 w-fit h-fit mx-auto rounded-full mb-5 cursor-pointer'><img src={Me} alt="Hero Background" className="w-44 mx-auto " /></div>
         <h1 ref={titleRef} className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0 transform translate-y-10 transition-all duration-1000 ease-out">
           Hi, I'm{' '}
           <span className={darkMode ? 'text-[#0071e3]' : 'text-[#0071e3]'}>

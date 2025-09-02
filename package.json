@@ -1,6 +1,5 @@
 {
   "name": "ushanrashmika23",
-  "homepage": "https://ushanrashmika23.github.io/ushanrashmika23",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -8,9 +7,7 @@
     "dev": "npx vite",
     "build": "npx vite build",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "preview": "npx vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "npx vite preview"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

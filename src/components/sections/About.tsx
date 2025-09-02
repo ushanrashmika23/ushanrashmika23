@@ -35,7 +35,7 @@ const About: React.FC<AboutProps> = ({
       <div className="flex flex-col md:flex-row gap-12 items-center max-w-6xl mx-auto">
         <div className="md:w-1/2">
           <p className={`text-lg leading-relaxed mb-6 ${darkMode ? 'text-[#b1b1b3]' : 'text-[#6e6e73]'}`}>
-            I’m Ushaan Rashmika, a software engineering student with 5+ years of experience creating user-focused applications. Skilled in Java, JavaScript, Python, and Flutter, I combine technical expertise with creative problem-solving to build clean, efficient software that delivers great user experiences.
+            I’m Ushan Rashmika, a software engineering student with more than five years of experience in creating user-focused applications. Skilled in Java, JavaScript, Python, and Flutter, I combine technical expertise with creative problem-solving to build clean, efficient software that delivers great user experiences.
             </p>
           <p className={`text-lg leading-relaxed ${darkMode ? 'text-[#b1b1b3]' : 'text-[#6e6e73]'}`}>
             Beyond coding, I enjoy exploring new tech, contributing to open-source, and mentoring others. I’m passionate about integrating AI and IoT into software to create innovative solutions that address real-world problems.

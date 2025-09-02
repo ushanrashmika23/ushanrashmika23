@@ -9,10 +9,10 @@ import Footer from './components/Footer';
 import ThemeToggle from './components/ThemeToggle';
 import BackgroundBlobs from './components/BackgroundBlobs';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Add from './components/admin/add';
-import AddProject from './components/admin/addProject';
-import AddExperience from './components/admin/addExperience';
-import AddTech from './components/admin/addTech';
+import Add from './components/admin/Add';
+import AddProject from './components/admin/AddProject';
+import AddExperience from './components/admin/AddExperience';
+import AddTech from './components/admin/AddTech';
 
 export function App() {
   const [darkMode, setDarkMode] = useState(false);

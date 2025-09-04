@@ -121,8 +121,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, darkMode, onClose 
                     position: "relative",
                     transform: "translate(0, 0)",
                     margin: "auto",
-                    backdropFilter: "blur(20px) saturate(180%)",
-                    WebkitBackdropFilter: "blur(20px) saturate(180%)",
+                    backdropFilter: "blur(32px) saturate(180%)",
+                    WebkitBackdropFilter: "blur(32px) saturate(180%)",
                     boxShadow: darkMode 
                         ? "0 25px 50px -12px rgba(0, 0, 0, 0.8)" 
                         : "0 25px 50px -12px rgba(0, 0, 0, 0.25)"

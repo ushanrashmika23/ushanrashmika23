@@ -24,22 +24,41 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, darkMode, onClose 
     const modalRef = useRef<HTMLDivElement>(null);
 
     // Get all images - always start with main project image, then add additional images
-    const allImages = project?.image ? [
-        project.image,
-        ...(project?.images && project.images.length > 0 ? project.images.filter(img => img !== project.image) : [])
-    ] : [project?.image || ''];
+    const allImages = React.useMemo(() => {
+        if (!project?.image) return [];
+        
+        const mainImage = project.image;
+        const additionalImages = project.images && project.images.length > 0 
+            ? project.images.filter(img => img !== mainImage) 
+            : [];
+        
+        return [mainImage, ...additionalImages];
+    }, [project?.image, project?.images]);
 
     const nextImage = useCallback(() => {
-        setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
+        if (allImages.length <= 1) return;
+        setCurrentImageIndex((prev) => {
+            const nextIndex = (prev + 1) % allImages.length;
+            console.log('Next image:', prev, '->', nextIndex, 'Total:', allImages.length);
+            return nextIndex;
+        });
     }, [allImages.length]);
 
     const prevImage = useCallback(() => {
-        setCurrentImageIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
+        if (allImages.length <= 1) return;
+        setCurrentImageIndex((prev) => {
+            const prevIndex = (prev - 1 + allImages.length) % allImages.length;
+            console.log('Prev image:', prev, '->', prevIndex, 'Total:', allImages.length);
+            return prevIndex;
+        });
     }, [allImages.length]);
 
     const goToImage = useCallback((index: number) => {
-        setCurrentImageIndex(index);
-    }, []);
+        if (index >= 0 && index < allImages.length) {
+            console.log('Go to image:', index);
+            setCurrentImageIndex(index);
+        }
+    }, [allImages.length]);
 
     useEffect(() => {
         if (project && modalRef.current) {
@@ -53,6 +72,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, darkMode, onClose 
             }, 100);
         }
     }, [project]);
+
+    // Reset image index when project changes
+    useEffect(() => {
+        setCurrentImageIndex(0);
+    }, [project?.id]);
 
     // Keyboard navigation for image carousel
     useEffect(() => {
@@ -123,14 +147,12 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, darkMode, onClose 
                             className="flex transition-transform duration-300 ease-out h-full"
                             style={{
                                 transform: `translateX(-${currentImageIndex * 100}%)`,
-                                width: `${allImages.length * 100}%`
                             }}
                         >
                             {allImages.map((image, index) => (
                                 <div
                                     key={index}
                                     className="w-full h-full flex-shrink-0 relative"
-                                    style={{ width: `${100 / allImages.length}%` }}
                                 >
                                     <img
                                         src={image}
@@ -148,22 +170,12 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, darkMode, onClose 
                                 <button
                                     onClick={prevImage}
                                     className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 bg-black/30 hover:bg-black/50 text-white backdrop-blur-sm shadow-lg border border-white/10 z-20"
-                                    style={{
-                                        opacity: currentImageIndex === 0 ? 0.5 : 1,
-                                        cursor: currentImageIndex === 0 ? 'not-allowed' : 'pointer'
-                                    }}
-                                    disabled={currentImageIndex === 0}
                                 >
                                     <ChevronLeftIcon className="h-5 w-5" />
                                 </button>
                                 <button
                                     onClick={nextImage}
                                     className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 bg-black/30 hover:bg-black/50 text-white backdrop-blur-sm shadow-lg border border-white/10 z-20"
-                                    style={{
-                                        opacity: currentImageIndex === allImages.length - 1 ? 0.5 : 1,
-                                        cursor: currentImageIndex === allImages.length - 1 ? 'not-allowed' : 'pointer'
-                                    }}
-                                    disabled={currentImageIndex === allImages.length - 1}
                                 >
                                     <ChevronRightIcon className="h-5 w-5" />
                                 </button>

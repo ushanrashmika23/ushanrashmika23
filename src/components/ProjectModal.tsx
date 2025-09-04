@@ -105,8 +105,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, darkMode, onClose 
             className="fixed inset-0 z-50 p-4"
             style={{
                 backgroundColor: "rgba(0, 0, 0, 0.4)",
-                backdropFilter: "blur(64px) saturate(150%)",
-                WebkitBackdropFilter: "blur(64px) saturate(150%)",
+                backdropFilter: "blur(12px) saturate(150%)",
+                WebkitBackdropFilter: "blur(12px) saturate(150%)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center"

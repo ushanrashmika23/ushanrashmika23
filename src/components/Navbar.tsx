@@ -41,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({
           <div className="text-2xl font-extrabold tracking-wider">
             <a href="#home" onClick={e => handleScroll(e, '#home')}>
               USHAN
-              <span className={`${darkMode ? 'text-primary' : 'text-primary'}`}>
+              <span className={`text-3xl ${darkMode ? 'text-primary' : 'text-primary'}`}>
                 .
               </span>
             </a>

@@ -48,17 +48,17 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
 
   const inputStyle = `w-full px-4 py-3 mt-1 rounded-xl outline-none transition-all duration-300
     ${darkMode
-      ? 'bg-[#2c2c30] text-white placeholder-gray-400 focus:ring-2 focus:ring-[#0071e3]'
-      : 'bg-white text-[#1d1d1f] placeholder-gray-500 focus:ring-2 focus:ring-[#0071e3] shadow-md shadow-black/5'}`;
+      ? 'bg-dark-tertiary text-white placeholder-gray-400 focus:ring-2 focus:ring-primary'
+      : 'bg-white text-light-text-primary placeholder-gray-500 focus:ring-2 focus:ring-primary shadow-md shadow-black/5'}`;
 
   const labelStyle = `block text-sm font-semibold mb-1
-    ${darkMode ? 'text-[#e5e5e5]' : 'text-[#1d1d1f]'}`;
+    ${darkMode ? 'text-light-border' : 'text-light-text-primary'}`;
 
   return (
-    <section id="contact" className={`relative py-20 md:py-32 overflow-hidden ${darkMode ? 'bg-[#1a1a1d80]' : 'bg-[#f5f5f78e]'}`}>
+    <section id="contact" className={`relative py-20 md:py-32 overflow-hidden ${darkMode ? 'bg-dark-secondary/50' : 'bg-light-secondary/56'}`}>
       <div ref={sectionRef} className="container relative mx-auto px-6 opacity-0 translate-y-10 transition-all duration-1000 ease-out">
         <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
-          Contact <span className="text-[#0071e3]">Me</span>
+          Contact <span className="text-primary">Me</span>
         </h2>
         <div className="max-w-[600px] mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -103,7 +103,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
 
             <button
               type="submit"
-              className={`group w-full px-8 py-4 rounded-full font-medium text-white text-sm uppercase tracking-wider transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] animate-scaleIn ${darkMode ? 'bg-[#0071e3] hover:bg-[#0077ED] shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30' : 'bg-[#0071e3] hover:bg-[#0077ED] shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30'}`}
+              className={`group w-full px-8 py-4 rounded-full font-medium text-white text-sm uppercase tracking-wider transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] animate-scaleIn ${darkMode ? 'bg-primary hover:bg-primary-hover shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30' : 'bg-primary hover:bg-primary-hover shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30'}`}
               style={{ animationDelay: '800ms' }}
             >
               <span className="flex items-center justify-center">
@@ -120,14 +120,14 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
             {/* GitHub */}
             <a
               href="#"
-              className={`p-4 rounded-full transition-all duration-300 hover:scale-110 group ${darkMode ? 'hover:bg-[#2c2c30]' : 'hover:bg-[#f5f5f7]'
+              className={`p-4 rounded-full transition-all duration-300 hover:scale-110 group ${darkMode ? 'hover:bg-dark-tertiary' : 'hover:bg-light-secondary'
                 }`}
               aria-label="GitHub"
             >
               <GithubIcon
                 className={`h-6 w-6 transition-colors duration-300 ${darkMode
-                  ? 'text-[#b1b1b3] group-hover:text-black'
-                  : 'text-[#6e6e73] group-hover:text-black'
+                  ? 'text-dark-text-secondary group-hover:text-social-github'
+                  : 'text-light-text-secondary group-hover:text-social-github'
                   }`}
               />
             </a>
@@ -135,14 +135,14 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
             {/* LinkedIn */}
             <a
               href="#"
-              className={`p-4 rounded-full transition-all duration-300 hover:scale-110 group ${darkMode ? 'hover:bg-[#2c2c30]' : 'hover:bg-[#f5f5f7]'
+              className={`p-4 rounded-full transition-all duration-300 hover:scale-110 group ${darkMode ? 'hover:bg-dark-tertiary' : 'hover:bg-light-secondary'
                 }`}
               aria-label="LinkedIn"
             >
               <LinkedinIcon
                 className={`h-6 w-6 transition-colors duration-300 ${darkMode
-                  ? 'text-[#b1b1b3] group-hover:text-[#0077b5]'
-                  : 'text-[#6e6e73] group-hover:text-[#0077b5]'
+                  ? 'text-dark-text-secondary group-hover:text-social-linkedin'
+                  : 'text-light-text-secondary group-hover:text-social-linkedin'
                   }`}
               />
             </a>
@@ -150,14 +150,14 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
             {/* Email */}
             <a
               href="#"
-              className={`p-4 rounded-full transition-all duration-300 hover:scale-110 group ${darkMode ? 'hover:bg-[#2c2c30]' : 'hover:bg-[#f5f5f7]'
+              className={`p-4 rounded-full transition-all duration-300 hover:scale-110 group ${darkMode ? 'hover:bg-dark-tertiary' : 'hover:bg-light-secondary'
                 }`}
               aria-label="Email"
             >
               <MailIcon
                 className={`h-6 w-6 transition-colors duration-300 ${darkMode
-                  ? 'text-[#b1b1b3] group-hover:text-[#ea4335]'
-                  : 'text-[#6e6e73] group-hover:text-[#ea4335]'
+                  ? 'text-dark-text-secondary group-hover:text-social-email'
+                  : 'text-light-text-secondary group-hover:text-social-email'
                   }`}
               />
             </a>

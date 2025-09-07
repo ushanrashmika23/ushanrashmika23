@@ -42,15 +42,15 @@ const Hero: React.FC<HeroProps> = ({
       <div className='p-1 bg-white/30 w-fit h-fit mx-auto rounded-full mb-5 cursor-pointer'><img src={Me} alt="Hero Background" className="w-44 mx-auto " /></div>
       <h1 ref={titleRef} className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0 transform translate-y-10 transition-all duration-1000 ease-out">
         Hi, I'm{' '}
-        <span className={darkMode ? 'text-[#0071e3]' : 'text-[#0071e3]'}>
+        <span className={darkMode ? 'text-primary' : 'text-primary'}>
           Ushan Rashmika
         </span>
       </h1>
-      <p ref={subtitleRef} className={`text-xl md:text-2xl mb-10 opacity-0 transform translate-y-10 transition-all duration-1000 ease-out delay-300 ${darkMode ? 'text-[#b1b1b3]' : 'text-[#6e6e73]'}`}>
+      <p ref={subtitleRef} className={`text-xl md:text-2xl mb-10 opacity-0 transform translate-y-10 transition-all duration-1000 ease-out delay-300 ${darkMode ? 'text-dark-text-secondary' : 'text-light-text-secondary'}`}>
         I craft structured, elegant software | web apps.
       </p>
       <div ref={ctaRef} className="opacity-0 transform translate-y-10 transition-all duration-1000 ease-out delay-600">
-        <button onClick={handleScroll} className={`group px-8 py-3 rounded-full font-medium tracking-wider text-sm uppercase transition-all duration-300 ${darkMode ? 'bg-[#0071e3] text-white hover:bg-[#0077ED] shadow-lg shadow-blue-500/20' : 'bg-[#0071e3] text-white hover:bg-[#0077ED] shadow-lg shadow-blue-500/20'}`}>
+        <button onClick={handleScroll} className={`group px-8 py-3 rounded-full font-medium tracking-wider text-sm uppercase transition-all duration-300 ${darkMode ? 'bg-primary text-white hover:bg-primary-hover shadow-lg shadow-blue-500/20' : 'bg-primary text-white hover:bg-primary-hover shadow-lg shadow-blue-500/20'}`}>
           <span className="flex items-center">
             See My Work
             {/* <ArrowDownIcon className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform duration-300" /> */}
@@ -61,7 +61,7 @@ const Hero: React.FC<HeroProps> = ({
       </div>
     </div>
     <div className="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
-      <ArrowDownIcon className={`h-6 w-6 ${darkMode ? 'text-[#b1b1b3]' : 'text-[#6e6e73]'}`} />
+      <ArrowDownIcon className={`h-6 w-6 ${darkMode ? 'text-dark-text-secondary' : 'text-light-text-secondary'}`} />
     </div>
   </section>;
 };

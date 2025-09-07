@@ -105,7 +105,7 @@ const Experience: React.FC<ExperienceProps> = ({
     <div ref={sectionRef} className="container mx-auto px-6 opacity-0 translate-y-10 transition-all duration-1000 ease-out">
       <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
         Experience &{' '}
-        <span className={darkMode ? 'text-[#0071e3]' : 'text-[#0071e3]'}>
+        <span className={darkMode ? 'text-primary' : 'text-primary'}>
           Education
         </span>
       </h2>
@@ -121,31 +121,31 @@ const Experience: React.FC<ExperienceProps> = ({
                 animationDelay: `${index * 0.2}s`
               }}>
                 {/* Timeline line - seamless continuation with extended length */}
-                {index !== displayedItems.length - 1 && <div className={`absolute left-[26px] w-[2px] ${darkMode ? 'bg-[#2c2c30]' : 'bg-[#e5e5e7]'}`} style={{ top: '-48px', height: 'calc(100% + 96px)' }} />}
+                {index !== displayedItems.length - 1 && <div className={`absolute left-[26px] w-[2px] ${darkMode ? 'bg-dark-tertiary' : 'bg-light-border'}`} style={{ top: '-48px', height: 'calc(100% + 96px)' }} />}
                 {/* Empty spacer to align with experience cards */}
                 <div className="relative flex-shrink-0 w-14 h-14"></div>
                 {/* Education card - same width as experience */}
-                <div className={`flex-grow p-4 rounded-lg transition-all duration-300 hover:scale-[1.01] border-l-4 ${darkMode ? 'bg-[#1a1a1d]/70 shadow-md shadow-black/20 border-l-[#0071e3]' : 'bg-[#f5f5f7] shadow-md shadow-black/5 border-l-[#0071e3]'
+                <div className={`flex-grow p-4 rounded-lg transition-all duration-300 hover:scale-[1.01] border-l-4 ${darkMode ? 'bg-dark-secondary/70 shadow-md shadow-black/20 border-l-primary' : 'bg-light-secondary shadow-md shadow-black/5 border-l-primary'
                   }`}>
                   <div className="flex items-center justify-between mb-2">
                     <h4 className="text-base font-semibold">{item.title}</h4>
-                    <span className={`text-xs ${darkMode ? 'text-[#b1b1b3]' : 'text-[#6e6e73]'}`}>
+                    <span className={`text-xs ${darkMode ? 'text-dark-text-secondary' : 'text-light-text-secondary'}`}>
                       {item.duration}
                     </span>
                   </div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className={`text-sm ${darkMode ? 'text-[#0071e3]' : 'text-[#0071e3]'}`}>
+                    <span className={`text-sm ${darkMode ? 'text-primary' : 'text-primary'}`}>
                       {item.company}
                     </span>
                     {item.gpa && (
-                      <span className={`text-xs px-2 py-1 rounded-full ${darkMode ? 'bg-[#0071e3]/20 text-[#0071e3]' : 'bg-[#0071e3]/10 text-[#0071e3]'
+                      <span className={`text-xs px-2 py-1 rounded-full ${darkMode ? 'bg-primary/20 text-primary' : 'bg-primary/10 text-primary'
                         }`}>
                         {item.gpa}
                       </span>
                     )}
                   </div>
                   {item.description && (
-                    <p className={`text-xs mb-2 ${darkMode ? 'text-[#b1b1b3]' : 'text-[#6e6e73]'}`}>
+                    <p className={`text-xs mb-2 ${darkMode ? 'text-dark-text-secondary' : 'text-light-text-secondary'}`}>
                       {item.description}
                     </p>
                   )}
@@ -160,32 +160,32 @@ const Experience: React.FC<ExperienceProps> = ({
                 animationDelay: `${index * 0.2}s`
               }}>
                 {/* Timeline line - extended to connect fully */}
-                {index !== displayedItems.length - 1 && <div className={`absolute left-[26px] top-12 w-[2px] ${darkMode ? 'bg-[#2c2c30]' : 'bg-[#e5e5e7]'}`} style={{ height: 'calc(100% + 48px)' }} />}
+                {index !== displayedItems.length - 1 && <div className={`absolute left-[26px] top-12 w-[2px] ${darkMode ? 'bg-dark-tertiary' : 'bg-light-border'}`} style={{ height: 'calc(100% + 48px)' }} />}
                 {/* Timeline dot */}
-                <div className={`relative flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center ${darkMode ? 'bg-[#1a1a1d] shadow-lg shadow-black/30' : 'bg-white shadow-lg shadow-black/5'}`}>
-                  <BriefcaseIcon className={`w-6 h-6 ${darkMode ? 'text-[#0071e3]' : 'text-[#0071e3]'}`} />
+                <div className={`relative flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center ${darkMode ? 'bg-dark-secondary shadow-lg shadow-black/30' : 'bg-white shadow-lg shadow-black/5'}`}>
+                  <BriefcaseIcon className={`w-6 h-6 ${darkMode ? 'text-primary' : 'text-primary'}`} />
                 </div>
                 {/* Content card */}
-                <div className={`flex-grow p-6 rounded-xl transition-all duration-300 hover:scale-[1.02] ${darkMode ? 'bg-[#1a1a1d] shadow-xl shadow-black/30' : 'bg-white shadow-xl shadow-black/5'}`}>
+                <div className={`flex-grow p-6 rounded-xl transition-all duration-300 hover:scale-[1.02] ${darkMode ? 'bg-dark-secondary shadow-xl shadow-black/30' : 'bg-white shadow-xl shadow-black/5'}`}>
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                     <h3 className="text-xl font-bold">{item.title}</h3>
                     <div className="flex items-center">
-                      <CalendarIcon className={`w-4 h-4 mr-2 ${darkMode ? 'text-[#b1b1b3]' : 'text-[#6e6e73]'}`} />
-                      <span className={`text-sm uppercase tracking-wider ${darkMode ? 'text-[#b1b1b3]' : 'text-[#6e6e73]'}`}>
+                      <CalendarIcon className={`w-4 h-4 mr-2 ${darkMode ? 'text-dark-text-secondary' : 'text-light-text-secondary'}`} />
+                      <span className={`text-sm uppercase tracking-wider ${darkMode ? 'text-dark-text-secondary' : 'text-light-text-secondary'}`}>
                         {item.duration}
                       </span>
                     </div>
                   </div>
-                  <a href={item.link} className={`inline-flex items-center text-lg font-medium mb-4 transition-colors duration-300 ${darkMode ? 'text-[#0071e3] hover:text-[#0077ED]' : 'text-[#0071e3] hover:text-[#0077ED]'}`}>
+                  <a href={item.link} className={`inline-flex items-center text-lg font-medium mb-4 transition-colors duration-300 ${darkMode ? 'text-primary hover:text-primary-hover' : 'text-primary hover:text-primary-hover'}`}>
                     {item.company}
                     <ExternalLinkIcon className="ml-2 w-4 h-4" />
                   </a>
-                  <p className={`mb-6 leading-relaxed ${darkMode ? 'text-[#b1b1b3]' : 'text-[#6e6e73]'}`}>
+                  <p className={`mb-6 leading-relaxed ${darkMode ? 'text-dark-text-secondary' : 'text-light-text-secondary'}`}>
                     {item.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {item.technologies.map((tech: string) => (
-                      <span key={tech} className={`px-3 py-1 text-sm rounded-full transition-all duration-300 ${darkMode ? 'bg-[#2c2c30] text-[#b1b1b3]' : 'bg-[#f5f5f7] text-[#6e6e73]'}`}>
+                      <span key={tech} className={`px-3 py-1 text-sm rounded-full transition-all duration-300 ${darkMode ? 'bg-dark-tertiary text-dark-text-secondary' : 'bg-light-secondary text-light-text-secondary'}`}>
                         {tech}
                       </span>
                     ))}
@@ -199,7 +199,7 @@ const Experience: React.FC<ExperienceProps> = ({
 
       {sortedTimelineItems.length > 3 && (
         <div className="mt-12 text-center">
-          <button onClick={() => setShowAll(!showAll)} className={`group flex items-center mx-auto text-sm font-medium tracking-wider uppercase transition-colors duration-300 ${darkMode ? 'text-[#0071e3] hover:text-[#0077ED]' : 'text-[#0071e3] hover:text-[#0077ED]'}`}>
+          <button onClick={() => setShowAll(!showAll)} className={`group flex items-center mx-auto text-sm font-medium tracking-wider uppercase transition-colors duration-300 ${darkMode ? 'text-primary hover:text-primary-hover' : 'text-primary hover:text-primary-hover'}`}>
             {showAll ? <>
               Show Recent Items{' '}
               <ChevronUpIcon className="ml-1 h-4 w-4 group-hover:-translate-y-1 transition-transform duration-300" />

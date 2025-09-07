@@ -4,7 +4,7 @@ import { ExternalLinkIcon, GithubIcon, XIcon, ChevronLeftIcon, ChevronRightIcon 
 export interface Project {
     id: number;
     title: string;
-    description: string;
+    description: string[]; // <-- now an array of paragraphs
     image: string;
     images?: string[] | null;
     technologies: string[];
@@ -115,8 +115,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, darkMode, onClose 
         >
             <div
                 ref={modalRef}
-                className={`relative w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-2xl shadow-2xl transform transition-all duration-300 ${darkMode ? 'bg-[#1a1a1d]/90' : 'bg-white/90'
-                    }`}
+                className={`relative w-full max-w-4xl rounded-2xl shadow-2xl transform transition-all duration-300 ${darkMode ? 'bg-dark-secondary/90' : 'bg-white/90'}`}
                 style={{
                     position: "relative",
                     transform: "translate(0, 0)",
@@ -132,16 +131,16 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, darkMode, onClose 
                 {/* Close Button */}
                 <button
                     onClick={onClose}
-                    className={`absolute top-6 right-6 z-10 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${darkMode ? 'bg-[#2c2c30]/80 text-[#f5f5f7] hover:bg-[#3c3c40]/90 shadow-md shadow-black/20 backdrop-blur-sm' : 'bg-[#f5f5f7]/80 text-[#6e6e73] hover:bg-gray-200/90 shadow-md shadow-black/5 backdrop-blur-sm'
+                    className={`absolute top-6 right-6 z-10 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${darkMode ? 'bg-dark-tertiary/80 text-dark-text-primary hover:bg-dark-quaternary/90 shadow-md shadow-black/20 backdrop-blur-sm' : 'bg-light-secondary/80 text-light-text-secondary hover:bg-gray-200/90 shadow-md shadow-black/5 backdrop-blur-sm'
                         }`}
                 >
                     <XIcon className="h-5 w-5" />
                 </button>
 
                 {/* Modal Content */}
-                <div className="overflow-y-auto max-h-[90vh]">
+                <div>
                     {/* Project Image Carousel - Instagram Style */}
-                    <div className="relative h-64 md:h-80 overflow-hidden bg-black">
+                    <div className="relative h-64 md:h-80 overflow-hidden bg-black rounded-t-2xl">
                         {/* Image Container with Smooth Transition */}
                         <div 
                             className="flex transition-transform duration-300 ease-out h-full"
@@ -191,7 +190,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, darkMode, onClose 
                                         onClick={() => goToImage(index)}
                                         className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${
                                             index === currentImageIndex
-                                                ? 'bg-[#0071e3] shadow-sm'
+                                                ? 'bg-primary shadow-sm'
                                                 : 'bg-white/40 hover:bg-white/60'
                                         }`}
                                     />
@@ -207,15 +206,22 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, darkMode, onClose 
                     <div className="p-8 md:p-12">
                         {/* Title */}
                         <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                            <span className={darkMode ? 'text-[#0071e3]' : 'text-[#0071e3]'}>
+                            <span className={darkMode ? 'text-primary' : 'text-primary'}>
                                 {project.title}
                             </span>
                         </h2>
 
                         {/* Description */}
-                        <p className={`text-lg leading-relaxed mb-8 ${darkMode ? 'text-[#b1b1b3]' : 'text-[#6e6e73]'}`}>
-                            {project.description}
-                        </p>
+                        <div className={`mb-8`}>
+                            {project.description.map((para, idx) => (
+                                <p
+                                    key={idx}
+                                    className={`text-lg leading-relaxed mb-4 ${darkMode ? 'text-dark-text-secondary' : 'text-light-text-secondary'}`}
+                                >
+                                    {para}
+                                </p>
+                            ))}
+                        </div>
 
                         {/* Technologies */}
                         <div className="mb-8">
@@ -224,7 +230,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, darkMode, onClose 
                                 {project.technologies.map((tech) => (
                                     <span
                                         key={tech}
-                                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 backdrop-blur-sm ${darkMode ? 'bg-[#2c2c30]/80 text-[#f5f5f7] shadow-md shadow-black/20' : 'bg-[#f5f5f7]/80 text-[#6e6e73] shadow-md shadow-black/5'
+                                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 backdrop-blur-sm ${darkMode ? 'bg-dark-tertiary/80 text-dark-text-primary shadow-md shadow-black/20' : 'bg-light-secondary/80 text-light-text-secondary shadow-md shadow-black/5'
                                             }`}
                                     >
                                         {tech}
@@ -239,7 +245,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, darkMode, onClose 
                                 href={project.demoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`inline-flex items-center justify-center px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg backdrop-blur-sm ${'bg-[#0071e3]/90 text-white hover:bg-[#0077ED] hover:shadow-xl'
+                                className={`inline-flex items-center justify-center px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg backdrop-blur-sm ${'bg-primary/90 text-white hover:bg-primary-hover hover:shadow-xl'
                                     }`}
                             >
                                 Live Demo <ExternalLinkIcon className="ml-2 h-5 w-5" />
@@ -248,7 +254,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, darkMode, onClose 
                                 href={project.githubUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`inline-flex items-center justify-center px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg backdrop-blur-sm ${darkMode ? 'bg-[#2c2c30]/80 text-[#f5f5f7] hover:bg-[#3c3c40]/90 shadow-black/20 hover:shadow-black/30' : 'bg-[#f5f5f7]/80 text-[#1d1d1f] hover:bg-gray-100/90 shadow-black/5 hover:shadow-black/10'
+                                className={`inline-flex items-center justify-center px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg backdrop-blur-sm ${darkMode ? 'bg-dark-tertiary/80 text-dark-text-primary hover:bg-dark-quaternary/90 shadow-black/20 hover:shadow-black/30' : 'bg-light-secondary/80 text-light-text-primary hover:bg-gray-100/90 shadow-black/5 hover:shadow-black/10'
                                     }`}
                             >
                                 View Code <GithubIcon className="ml-2 h-5 w-5" />

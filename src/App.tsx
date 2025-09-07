@@ -34,7 +34,7 @@ export function App() {
   const toggleTheme = () => {
     setDarkMode(!darkMode);
   };
-  return <div className={`min-h-screen w-full transition-colors duration-500 ${darkMode ? 'bg-[#0c0c0e] text-[#f5f5f7]' : 'bg-[#ffffff] text-[#1d1d1f]'}`}>
+  return <div className={`min-h-screen w-full transition-colors duration-500 ${darkMode ? 'bg-dark-primary text-dark-text-primary' : 'bg-light-primary text-light-text-primary'}`}>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={

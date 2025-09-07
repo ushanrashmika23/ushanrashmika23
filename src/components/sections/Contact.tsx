@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { GithubIcon, LinkedinIcon, MailIcon, SendIcon } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, MailIcon, SendIcon, Loader2, Check } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 
@@ -12,6 +12,8 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -27,24 +29,33 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
 
-  const templateParams = {
-    from_name: name,
-    from_email: email,
-    message: `${message} \n\nSent from: ${email} (${name})`,
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      message: `${message} \n\nSent from: ${email} (${name})`,
+    };
+
+    try {
+      await emailjs.send('service_7c53znu', 'template_mewezdk', templateParams, 'IcM6f9EewQwqVEEPr');
+      setIsLoading(false);
+      setIsSuccess(true);
+      
+      // Show success state for 1 second then reset
+      setTimeout(() => {
+        setIsSuccess(false);
+        setName('');
+        setEmail('');
+        setMessage('');
+      }, 1000);
+    } catch (error) {
+      setIsLoading(false);
+      alert('Failed to send message. Try again.');
+    }
   };
-
-  emailjs.send('service_7c53znu', 'template_mewezdk', templateParams, 'IcM6f9EewQwqVEEPr')
-    .then(() => {
-      alert('Message sent!');
-      setName('');      // clear name field
-      setEmail('');     // clear email field
-      setMessage('');   // clear message field
-    })
-    .catch(() => alert('Failed to send message. Try again.'));
-};
 
   const inputStyle = `w-full px-4 py-3 mt-1 rounded-xl outline-none transition-all duration-300
     ${darkMode
@@ -103,12 +114,33 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
 
             <button
               type="submit"
-              className={`group w-full px-8 py-4 rounded-full font-medium text-white text-sm uppercase tracking-wider transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] animate-scaleIn ${darkMode ? 'bg-primary hover:bg-primary-hover shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30' : 'bg-primary hover:bg-primary-hover shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30'}`}
+              disabled={isLoading || isSuccess}
+              className={`group w-full px-8 py-4 rounded-full font-medium text-white text-sm uppercase tracking-wider transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] animate-scaleIn ${
+                isLoading || isSuccess 
+                  ? 'bg-primary/70 cursor-not-allowed' 
+                  : darkMode 
+                    ? 'bg-primary hover:bg-primary-hover shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30' 
+                    : 'bg-primary hover:bg-primary-hover shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30'
+              }`}
               style={{ animationDelay: '800ms' }}
             >
               <span className="flex items-center justify-center">
-                Send Message
-                <SendIcon className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                {isLoading ? (
+                  <>
+                    Sending...
+                    <Loader2 className="ml-2 h-4 w-4 animate-spin" />
+                  </>
+                ) : isSuccess ? (
+                  <>
+                    Sent!
+                    <Check className="ml-2 h-4 w-4" />
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <SendIcon className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </>
+                )}
               </span>
             </button>
           </form>

@@ -45,72 +45,37 @@ const Projects: React.FC<ProjectsProps> = ({
     featured: true
   }, {
     id: 2,
-    title: 'Task Management App',
-    description: ['A productivity application for managing tasks, projects, and team collaboration.',],
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    title: 'SecureShare - File Sharing Platform',
+    description: ['SecureShare is a lightweight PHP application designed for instant file upload and secure sharing. Its main goal is to allow users to upload files quickly and share them via expiring links, ensuring that shared content remains private and accessible only for a limited time. This approach makes SecureShare ideal for scenarios where sensitive files need to be distributed without permanent public exposure, such as sending confidential documents or temporary resources to colleagues or clients.',
+      'The mechanism behind SecureShare involves a simple web interface where users can upload files. Once a file is uploaded, the application generates a unique link for sharing. This link is programmed to expire after a predefined period or after a certain number of accesses, automatically invalidating access and deleting the file if needed. By leveraging PHP for backend processing, SecureShare handles file storage, link creation, and expiration logic efficiently, making secure sharing effortless and reliable without complex setup or dependencies.'
     ],
-    technologies: ['Angular', 'Firebase', 'TypeScript'],
-    demoUrl: '#',
-    githubUrl: '#',
+    image: 'https://github.com/ushanrashmika23/project_images/blob/main/secure_share/cov001.png?raw=true',
+    images: [
+      'https://github.com/ushanrashmika23/project_images/blob/main/secure_share/cov003.png?raw=true',
+      'https://github.com/ushanrashmika23/project_images/blob/main/secure_share/cov004.png?raw=true',
+      'https://github.com/ushanrashmika23/project_images/blob/main/secure_share/cov005.png?raw=true',
+      'https://github.com/ushanrashmika23/project_images/blob/main/secure_share/cov002.png?raw=true',
+
+    ],
+    technologies: ['PHP', 'JSON', 'HTML', 'CSS'],
+    demoUrl: 'https://github.com/ushanrashmika23/secure-share',
+    githubUrl: 'https://github.com/ushanrashmika23/secure-share',
     featured: true
   }, {
     id: 3,
-    title: 'Weather Dashboard',
+    title: 'DevJournal - @ushanrashmika23',
     description: [
-      'Real-time weather information with forecasts, maps, and customizable alerts.'
+      'This project is all about creating a space where I can share my journey as a developer in a meaningful and organized way. The goal is to build a journal-like platform that combines project documentation, blog posts, learning notes, and tech updates in one place. It’s designed to be both personal and useful  a hub where I can track my progress, experiment with ideas, and reflect on what I learn. By writing about my projects and challenges, I aim to improve my own understanding while creating content that can help and inspire other developers. Over time, this project will grow into a complete archive of my work, thoughts, and discoveries, making it not just a journal, but a living portfolio of my development journey.'
     ],
-    image: 'https://images.unsplash.com/photo-1601134467661-3d775b999c8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+    image: 'https://github.com/ushanrashmika23/project_images/blob/main/dev_journal/cov001.png?raw=true',
     images: [
-      'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1516912481808-3406841bd33c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      'https://github.com/ushanrashmika23/project_images/blob/main/dev_journal/cov002.png?raw=true',
+      'https://github.com/ushanrashmika23/project_images/blob/main/dev_journal/cov003.png?raw=true',
     ],
-    technologies: ['React', 'OpenWeather API', 'Chart.js'],
+    technologies: ['React', 'TailwindCSS', 'Node.js', "MongoDB", "Express"],
     demoUrl: '#',
     githubUrl: '#',
     featured: true
-  }, {
-    id: 4,
-    title: 'Social Media Dashboard',
-    description: ['Analytics platform for tracking engagement across multiple social media channels.',],
-    image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    ],
-    technologies: ['Vue.js', 'Express', 'PostgreSQL'],
-    demoUrl: '#',
-    githubUrl: '#',
-    featured: false
-  }, {
-    id: 5,
-    title: 'Fitness Tracker',
-    description: ['Mobile application for tracking workouts, nutrition, and fitness progress.'],
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    ],
-    technologies: ['React Native', 'Redux', 'Firebase'],
-    demoUrl: '#',
-    githubUrl: '#',
-    featured: false
-  }, {
-    id: 6,
-    title: 'Recipe Finder',
-    description: ['Search engine for recipes with filtering by ingredients, cuisine, and dietary restrictions.',],
-    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    ],
-    technologies: ['JavaScript', 'API Integration', 'Bootstrap'],
-    demoUrl: '#',
-    githubUrl: '#',
-    featured: false
   }
   ];
   const featuredProjects = projects.filter(project => project.featured);

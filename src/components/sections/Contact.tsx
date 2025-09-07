@@ -43,7 +43,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
       await emailjs.send('service_7c53znu', 'template_mewezdk', templateParams, 'IcM6f9EewQwqVEEPr');
       setIsLoading(false);
       setIsSuccess(true);
-      
+
       // Show success state for 1 second then reset
       setTimeout(() => {
         setIsSuccess(false);
@@ -115,13 +115,12 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
             <button
               type="submit"
               disabled={isLoading || isSuccess}
-              className={`group w-full px-8 py-4 rounded-full font-medium text-white text-sm uppercase tracking-wider transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] animate-scaleIn ${
-                isLoading || isSuccess 
-                  ? 'bg-primary/70 cursor-not-allowed' 
-                  : darkMode 
-                    ? 'bg-primary hover:bg-primary-hover shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30' 
-                    : 'bg-primary hover:bg-primary-hover shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30'
-              }`}
+              className={`group w-full px-8 py-4 rounded-full font-medium text-white text-sm uppercase tracking-wider transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] animate-scaleIn ${isLoading || isSuccess
+                ? 'bg-primary/70 cursor-not-allowed'
+                : darkMode
+                  ? 'bg-primary hover:bg-primary-hover shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30'
+                  : 'bg-primary hover:bg-primary-hover shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30'
+                }`}
               style={{ animationDelay: '800ms' }}
             >
               <span className="flex items-center justify-center">
@@ -144,9 +143,11 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
               </span>
             </button>
           </form>
-
+          <p className={`text-md text-center mt-16 ${darkMode ? 'text-dark-text-secondary' : 'text-light-text-secondary'}`}>
+            Follow me on social media for development journey & stories.
+          </p>
           <div
-            className="mt-12 flex justify-center space-x-6 animate-fadeIn"
+            className="mt-4 flex justify-center space-x-6 animate-fadeIn"
             style={{ animationDelay: '1000ms' }}
           >
             {/* GitHub */}
@@ -193,7 +194,6 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                   }`}
               />
             </a>
-
           </div>
 
 
